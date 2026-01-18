@@ -1,75 +1,50 @@
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0;
-  max-width: 800px;
-}
-
-.product-grid button {
-  padding: 1rem;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.2s;
-}
-
-.product-grid button:hover {
-  background: #0056b3;
-}
-
 h1 {
-  color: #333;
   text-align: center;
-  margin-bottom: 2rem;
+  color: #333;
+  margin: 2rem 0;
 }
 
 .search-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
 }
 
 .search-input {
   width: 100%;
-  max-width: 400px;
-  padding: 0.75rem 1rem;
-  border: 2px solid #ddd;
-  border-radius: 25px;
+  padding: 0.75rem;
   font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .search-input:focus {
+  outline: none;
   border-color: #007bff;
 }
 
 .category-filter {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
 .category-btn {
-  padding: 0.5rem 1rem;
-  background: #f8f9fa;
-  color: #333;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
   border: 2px solid #ddd;
-  border-radius: 20px;
+  background: white;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9rem;
   transition: all 0.2s;
 }
 
 .category-btn:hover {
-  background: #e9ecef;
-  border-color: #adb5bd;
+  border-color: #007bff;
+  color: #007bff;
 }
 
 .category-btn.active {
@@ -78,22 +53,43 @@ h1 {
   border-color: #007bff;
 }
 
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .product-grid button {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.1s ease;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.product-grid button:active {
-  transform: scale(0.95);
+.product-grid button:hover {
+  border-color: #007bff;
+  color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes addToCart {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+.product-grid button.add-animation {
+  animation: addPulse 0.3s ease-in-out;
 }
 
-.add-animation {
-  animation: addToCart 0.3s ease;
+@keyframes addPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+    background: #e7f3ff;
+    border-color: #007bff;
+  }
 }

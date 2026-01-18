@@ -6,6 +6,7 @@ import { useState } from 'react';
 export default function App() {
   const { addItem } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [animatingProduct, setAnimatingProduct] = useState<number | null>(null);
 
   const products = [
@@ -22,6 +23,12 @@ export default function App() {
     { id: 'fruits', name: 'Fruits' },
     { id: 'vegetables', name: 'Vegetables' },
   ];
+
+  const filteredProducts = products.filter(product => {
+    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   const handleAddItem = (product: typeof products[0]) => {
     addItem({ ...product, quantity: 1 });
