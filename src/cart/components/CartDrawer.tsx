@@ -5,6 +5,7 @@ const CartDrawer = () => {
   const { cart, removeItem, decreaseItem, addItem, clearCart } = useCart();
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
   return (
     <aside className="cart-drawer">
@@ -13,7 +14,11 @@ const CartDrawer = () => {
         {cart.map((item) => (
           <li key={item.id}>
             <img src={item.image} alt={item.name} width={40} height={40} />
-            <span>{item.name}</span>
+            <div className="item-details">
+              <span className="item-name">{item.name}</span>
+              <span className="item-price">${item.price.toFixed(2)} each</span>
+              <span className="item-subtotal">${(item.price * item.quantity).toFixed(2)}</span>
+            </div>
             <div className="qty-controls">
               <button onClick={() => decreaseItem(item.id)}>-</button>
               <span>{item.quantity}</span>
@@ -24,9 +29,14 @@ const CartDrawer = () => {
         ))}
       </ul>
       {cart.length > 0 && (
-        <button onClick={clearCart} className="clear-btn">
-          Clear Cart
-        </button>
+        <>
+          <div className="cart-total">
+            <strong>Total: ${totalPrice.toFixed(2)}</strong>
+          </div>
+          <button onClick={clearCart} className="clear-btn">
+            Clear Cart
+          </button>
+        </>
       )}
     </aside>
   );
