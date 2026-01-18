@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function App() {
   const { addItem } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [animatingProduct, setAnimatingProduct] = useState<number | null>(null);
 
   const products = [
     { id: 1, name: 'Apple', image: 'apple.png', price: 1.50, category: 'fruits' },
@@ -23,11 +23,11 @@ export default function App() {
     { id: 'vegetables', name: 'Vegetables' },
   ];
 
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const handleAddItem = (product: typeof products[0]) => {
+    addItem({ ...product, quantity: 1 });
+    setAnimatingProduct(product.id);
+    setTimeout(() => setAnimatingProduct(null), 300);
+  };
 
   return (
     <>
@@ -56,7 +56,8 @@ export default function App() {
         {filteredProducts.map(product => (
           <button
             key={product.id}
-            onClick={() => addItem({ ...product, quantity: 1 })}
+            onClick={() => handleAddItem(product)}
+            className={animatingProduct === product.id ? 'add-animation' : ''}
           >
             Add {product.name} (${product.price.toFixed(2)})
           </button>
