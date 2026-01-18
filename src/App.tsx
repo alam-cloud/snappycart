@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function App() {
   const { addItem } = useCart();
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const products = [
