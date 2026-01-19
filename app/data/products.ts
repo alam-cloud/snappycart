@@ -4,13 +4,10 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  originalPrice?: number;
   image: string;
   category: string;
   brand?: string;
   inStock: boolean;
-  rating?: number;
-  reviewCount?: number;
   tags?: string[];
 }
 
@@ -30,13 +27,10 @@ export const products: Product[] = [
     name: 'Wireless Headphones',
     description: 'Premium noise-cancelling wireless headphones with 30-hour battery life',
     price: 159.99,
-    originalPrice: 199.99,
     image: 'headphones',
     category: 'electronics',
     brand: 'TechSound',
     inStock: true,
-    rating: 4.5,
-    reviewCount: 324,
     tags: ['wireless', 'noise-cancelling', 'bluetooth'],
   },
   {
@@ -48,8 +42,6 @@ export const products: Product[] = [
     category: 'electronics',
     brand: 'TechWear',
     inStock: true,
-    rating: 4.7,
-    reviewCount: 512,
     tags: ['fitness', 'smartwatch', 'health'],
   },
   {
@@ -57,13 +49,10 @@ export const products: Product[] = [
     name: 'Portable Speaker',
     description: 'Waterproof Bluetooth speaker with 360° sound',
     price: 64.99,
-    originalPrice: 79.99,
     image: 'speaker',
     category: 'electronics',
     brand: 'AudioMax',
     inStock: true,
-    rating: 4.3,
-    reviewCount: 189,
     tags: ['portable', 'waterproof', 'bluetooth'],
   },
   {
@@ -75,8 +64,6 @@ export const products: Product[] = [
     category: 'electronics',
     brand: 'WorkSpace',
     inStock: true,
-    rating: 4.6,
-    reviewCount: 267,
     tags: ['ergonomic', 'adjustable', 'office'],
   },
 
@@ -86,13 +73,10 @@ export const products: Product[] = [
     name: 'Classic Cotton T-Shirt',
     description: '100% organic cotton t-shirt, comfortable and durable',
     price: 19.99,
-    originalPrice: 24.99,
     image: 'tshirt',
     category: 'clothing',
     brand: 'EcoWear',
     inStock: true,
-    rating: 4.4,
-    reviewCount: 445,
     tags: ['cotton', 'organic', 'casual'],
   },
   {
@@ -100,13 +84,10 @@ export const products: Product[] = [
     name: 'Denim Jeans',
     description: 'Classic fit denim jeans with stretch comfort',
     price: 49.99,
-    originalPrice: 64.99,
     image: 'jeans',
     category: 'clothing',
     brand: 'DenimCo',
     inStock: true,
-    rating: 4.5,
-    reviewCount: 678,
     tags: ['denim', 'classic', 'comfort'],
   },
   {
@@ -114,13 +95,10 @@ export const products: Product[] = [
     name: 'Running Shoes',
     description: 'Lightweight running shoes with cushioned sole',
     price: 74.99,
-    originalPrice: 99.99,
     image: 'shoes',
     category: 'clothing',
     brand: 'RunFast',
     inStock: true,
-    rating: 4.6,
-    reviewCount: 892,
     tags: ['running', 'sports', 'lightweight'],
   },
   {
@@ -128,13 +106,10 @@ export const products: Product[] = [
     name: 'Winter Jacket',
     description: 'Insulated waterproof winter jacket with hood',
     price: 124.99,
-    originalPrice: 164.99,
     image: 'jacket',
     category: 'clothing',
     brand: 'OutdoorGear',
     inStock: true,
-    rating: 4.7,
-    reviewCount: 334,
     tags: ['winter', 'waterproof', 'insulated'],
   },
 
@@ -148,8 +123,6 @@ export const products: Product[] = [
     category: 'home',
     brand: 'BrewMaster',
     inStock: true,
-    rating: 4.5,
-    reviewCount: 523,
     tags: ['coffee', 'kitchen', 'appliance'],
   },
   {
@@ -161,8 +134,6 @@ export const products: Product[] = [
     category: 'home',
     brand: 'BrightLight',
     inStock: true,
-    rating: 4.4,
-    reviewCount: 312,
     tags: ['lighting', 'LED', 'office'],
   },
   {
@@ -170,13 +141,10 @@ export const products: Product[] = [
     name: 'Throw Pillow Set',
     description: 'Set of 2 decorative throw pillows with premium cover',
     price: 28.99,
-    originalPrice: 36.99,
     image: 'pillows',
     category: 'home',
     brand: 'HomeStyle',
     inStock: true,
-    rating: 4.3,
-    reviewCount: 278,
     tags: ['decor', 'comfort', 'home'],
   },
   {
@@ -188,8 +156,6 @@ export const products: Product[] = [
     category: 'home',
     brand: 'GardenCo',
     inStock: true,
-    rating: 4.6,
-    reviewCount: 189,
     tags: ['plants', 'ceramic', 'garden'],
   },
 
@@ -203,8 +169,6 @@ export const products: Product[] = [
     category: 'sports',
     brand: 'FitLife',
     inStock: true,
-    rating: 4.5,
-    reviewCount: 456,
     tags: ['yoga', 'fitness', 'exercise'],
   },
   {
@@ -216,8 +180,6 @@ export const products: Product[] = [
     category: 'sports',
     brand: 'HydratePro',
     inStock: true,
-    rating: 4.7,
-    reviewCount: 634,
     tags: ['water', 'insulated', 'fitness'],
   },
   {
@@ -225,13 +187,10 @@ export const products: Product[] = [
     name: 'Backpack',
     description: 'Durable hiking backpack with multiple compartments',
     price: 64.99,
-    originalPrice: 79.99,
     image: 'backpack',
     category: 'sports',
     brand: 'TrailMaster',
     inStock: true,
-    rating: 4.6,
-    reviewCount: 423,
     tags: ['hiking', 'outdoor', 'travel'],
   },
   {
@@ -243,8 +202,6 @@ export const products: Product[] = [
     category: 'sports',
     brand: 'AceSports',
     inStock: true,
-    rating: 4.5,
-    reviewCount: 267,
     tags: ['tennis', 'sports', 'professional'],
   },
 
@@ -254,13 +211,10 @@ export const products: Product[] = [
     name: 'Business Strategy Guide',
     description: 'Complete guide to modern business strategy and planning',
     price: 19.99,
-    originalPrice: 24.99,
     image: 'book',
     category: 'books',
     brand: 'LearnPress',
     inStock: true,
-    rating: 4.6,
-    reviewCount: 234,
     tags: ['business', 'strategy', 'education'],
   },
   {
@@ -272,8 +226,6 @@ export const products: Product[] = [
     category: 'books',
     brand: 'StoryBooks',
     inStock: true,
-    rating: 4.7,
-    reviewCount: 567,
     tags: ['fiction', 'sci-fi', 'novel'],
   },
 ];
